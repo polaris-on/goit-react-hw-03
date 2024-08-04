@@ -12,7 +12,7 @@ function App() {
   const savedContacts = localStorage.getItem("contacts");
   const initialContacts = savedContacts ? JSON.parse(savedContacts) : contacts;
 
-  const [contact+List, setContactList] = useState(initialContacts);
+  const [contactList, setContactList] = useState(initialContacts);
   const [originalContactList, setOriginalContactList] =
     useState(initialContacts);
 
@@ -21,17 +21,14 @@ function App() {
   }, [contactList]);
 
   const handleSubmit = (data, actions) => {
-    // console.log(data.username);
     const newContact = {
       name: data.username,
       number: data.number,
       id: "id-" + nanoid(),
     };
-    console.log(newContact);
     setContactList((prev) => [...prev, newContact]);
     setOriginalContactList((prev) => [...prev, newContact]);
 
-    console.log(contactList);
     actions.resetForm();
   };
   const [searchForm, setSearchForm] = useState({ search: "" });
