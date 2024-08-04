@@ -1,0 +1,57 @@
+.contactForm {
+  background-color: var(--yellow);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px var(--shadow-color);
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--bright-accent);
+  text-align: center;
+}
+
+.labelWrapper {
+  position: relative;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--bright-accent);
+}
+
+.input {
+  width: 100%;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: inset 2px 2px 5px var(--shadow-color);
+  outline-color: var(--bright-accent);
+}
+
+.button {
+  background-color: var(--bright-accent);
+  color: white;
+  padding: var(--padding);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  width: 100%;
+}
+.error {
+  position: absolute;
+  color: red;
+  left: 5px;
+  bottom: -24px;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px 2px var(--shadow-color);
+}

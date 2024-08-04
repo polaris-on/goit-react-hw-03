@@ -1,0 +1,28 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  margin-bottom: 10px;
+  background-color: var(--light-blue);
+  border-radius: var(--border-radius);
+  box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+.name {
+  font-weight: bold;
+  color: var(--bright-accent);
+}
+
+.number {
+  color: var(--bright-accent);
+}
+
+.button {
+  background-color: var(--bright-accent);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  padding: 5px 10px;
+}

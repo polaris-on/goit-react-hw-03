@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* App.css */
+:root {
+  --light-blue: #acf2fb;
+  --yellow: #efffb8;
+  --bright-accent: #f59300;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --border-radius: 10px;
+  --padding: 10px;
+}
+
+body {
+  background-color: var(--light-blue);
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  color: var(--bright-accent);
+  text-align: center;
+  margin-bottom: 20px;
+}
+label,
+input {
+  display: block;
+}

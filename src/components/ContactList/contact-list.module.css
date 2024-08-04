@@ -1,0 +1,19 @@
+/* contact-list.module.css */
+.contactListWrapper {
+    background-color: var(--yellow);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  
+  .subtitle {
+    color: var(--bright-accent);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .contactsList {
+    list-style: none;
+    padding: 0;
+  }
+  

@@ -1,0 +1,20 @@
+.searchBox {
+  background-color: var(--yellow);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px var(--shadow-color);
+  margin-bottom: 20px;
+}
+.subtitle {
+  color: var(--bright-accent);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: inset 2px 2px 5px var(--shadow-color);
+}
