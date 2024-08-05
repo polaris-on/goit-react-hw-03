@@ -42,10 +42,10 @@ function App() {
     );
   };
 
-  const handleDelete = (name) => {
-    setContactList((prev) => prev.filter((contact) => contact.name !== name));
+  const handleDelete = (id) => {
+    setContactList((prev) => prev.filter((contact) => contact.id !== id));
     setOriginalContactList((prev) =>
-      prev.filter((contact) => contact.name !== name)
+      prev.filter((contact) => contact.id !== id)
     );
   };
 

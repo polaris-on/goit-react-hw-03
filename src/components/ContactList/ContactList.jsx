@@ -8,6 +8,7 @@ const ContactList = ({ contactList, handleDelete }) => {
       <ul className={s.contactsList}>
         {contactList.map((contact) => (
           <Contact
+            id={contact.id}
             key={contact.id}
             name={contact.name}
             number={contact.number}
