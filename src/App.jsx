@@ -13,8 +13,6 @@ function App() {
   const initialContacts = savedContacts ? JSON.parse(savedContacts) : contacts;
 
   const [contactList, setContactList] = useState(initialContacts);
-  const [originalContactList, setOriginalContactList] =
-    useState(initialContacts);
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -29,7 +27,6 @@ function App() {
       id: "id-" + nanoid(),
     };
     setContactList((prev) => [...prev, newContact]);
-    setOriginalContactList((prev) => [...prev, newContact]);
 
     actions.resetForm();
   };
@@ -40,10 +37,11 @@ function App() {
 
   const handleDelete = (id) => {
     setContactList((prev) => prev.filter((contact) => contact.id !== id));
-    setOriginalContactList((prev) =>
-      prev.filter((contact) => contact.id !== id)
-    );
   };
+
+  const filteredContacts = contactList.filter((contact) =>
+    contact.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <>
@@ -53,8 +51,7 @@ function App() {
         <SearchBox handleSearch={handleSearch} searchQuery={searchQuery} />
         <ContactList
           handleDelete={handleDelete}
-          contactList={contactList}
-          searchQuery={searchQuery}
+          contactList={filteredContacts}
         />
       </div>
     </>
