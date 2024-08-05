@@ -16,6 +16,8 @@ function App() {
   const [originalContactList, setOriginalContactList] =
     useState(initialContacts);
 
+  const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contactList));
   }, [contactList]);
@@ -31,15 +33,9 @@ function App() {
 
     actions.resetForm();
   };
-  const [searchForm, setSearchForm] = useState({ search: "" });
 
-  const handleSearch = ({ name, value }) => {
-    setSearchForm({ [name]: value });
-    setContactList((prev) =>
-      originalContactList.filter((contact) =>
-        contact.name.toLowerCase().includes(value.toLowerCase())
-      )
-    );
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
   };
 
   const handleDelete = (id) => {
@@ -54,11 +50,12 @@ function App() {
       <div>
         <h1 className="title">Phonebook</h1>
         <ContactForm handleSubmit={handleSubmit} />
-        <SearchBox
-          handleSearch={handleSearch}
-          searchValue={searchForm.search}
+        <SearchBox handleSearch={handleSearch} searchQuery={searchQuery} />
+        <ContactList
+          handleDelete={handleDelete}
+          contactList={contactList}
+          searchQuery={searchQuery}
         />
-        <ContactList handleDelete={handleDelete} contactList={contactList} />
       </div>
     </>
   );
